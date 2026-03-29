@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}MEDEX - Accueil{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Hero section specific styles */
+    .hero {
+        text-align: center;
+        padding: 4rem 1rem;
+        background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: var(--primary-color);
+        opacity: 0.1;
+        border-radius: 50%;
+        top: -50px;
+        right: -50px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        color: var(--primary-dark);
+        margin-bottom: 1.5rem;
+    }
+    .hero p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .btn-outline {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        background: transparent;
+        padding: 10px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+    .btn-outline:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        box-shadow: var(--shadow-sm);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Prenez rendez-vous en ligne en un clic</h1>
+    <p>Trouvez le professionnel de santé dont vous avez besoin, découvrez ses disponibilités et réservez instantanément.</p>
+    
+    <div class="hero-buttons">
+        <a href="#" class="btn-primary" style="font-weight:600; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> Rechercher un médecin</a>
+        <a href="#" class="btn-outline"><i class="fa-solid fa-user-md"></i> Je suis professionnel</a>
+    </div>
+</div>
+
+<div class="card" style="text-align: center;">
+    <h2>Pourquoi choisir MEDEX ?</h2>
+    <p>Une plateforme sécurisée, rapide et réactive pensée pour vous faire gagner du temps et améliorer votre suivi médical.</p>
+</div>
+{% endblock %}
