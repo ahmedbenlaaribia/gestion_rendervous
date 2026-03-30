@@ -131,3 +131,7 @@ AUTH_USER_MODEL = 'users.User'
 # Default primary key field type
 # https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Bypass the MariaDB/MySQL strict version check for XAMPP
+import django.db.backends.mysql.base as mysql_base
+mysql_base.DatabaseWrapper.check_database_version_supported = lambda self: True
